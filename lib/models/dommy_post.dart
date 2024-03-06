@@ -1,0 +1,67 @@
+final posts = [
+  {
+    'id': '0',
+    'author': 'Wisdom Ugochukwu',
+    'image': 'assets/images/offense-blog.png',
+    'title': 'No Offense, But…',
+    'category': 'Business',
+    'dateCreated': '3 days ago',
+    'likes': 82,
+    'comments': 123,
+    'isLiked': false,
+    'description':
+        '“No offense, but…” That’s often how you begin a conversation that is inevitably going to involve some element of disagreement with the person you are in dialogue with. I don’t mean to offend – but I am now going to say some things that will show I disagree with you and that may cause offense. They may cause…',
+  },
+  {
+    'id': '1',
+    'author': 'John Deo',
+    'image': 'assets/images/Marathon.jpg',
+    'title': 'Be challenged and encouraged to win the price',
+    'category': 'Sports',
+    'dateCreated': '2 months ago',
+    'likes': 223,
+    'comments': 12,
+    'isLiked': false,
+    'description':
+        'Whether you are a brand new church planter with a dream to change the world or a seasoned ministry veteran with decades of experience, these posts will help you articulate what you\'ve always felt deep within you.',
+  },
+  {
+    'id': '2',
+    'author': 'Abraham Lincon',
+    'image': 'assets/images/emulation-blog.png',
+    'title': 'Look At Me',
+    'category': 'Politics',
+    'dateCreated': '3 years ago',
+    'likes': 654,
+    'comments': 65,
+    'isLiked': true,
+    'description':
+        'Emulation is the first principle of formation and transformation. Children imitate parents and siblings, students emulate their teachers and peers. How did you learn to write? Throw and catch and bat? Relate to friends? Prepare for exams? Form successful habits at work? How did you learn to bake bread or make an omelet? You learned…',
+  },
+  {
+    'id': '3',
+    'author': 'Wisdom Ugochukwu',
+    'image': 'assets/images/meditate-blog.png',
+    'title': 'Learning to Meditate on Scripture',
+    'category': 'Business',
+    'dateCreated': '30 days ago',
+    'likes': 89,
+    'comments': 110,
+    'isLiked': false,
+    'description':
+        'The word meditation sounds an alarm in some Christian minds, evoking images of gurus sitting cross-legged amid chants and incense smoke. When I’ve taught on Scripture meditation, I’ve occasionally even been met by pushback, a wariness of anything that seems Eastern or mystical. Notwithstanding the reality that the Christian tradition has its origins in the…',
+  },
+  {
+    'id': '4',
+    'author': 'Marlena Graves',
+    'image': 'assets/images/discerning-blog.png',
+    'title': 'Discerning When to Stay and When to Go',
+    'category': 'Entertainment',
+    'dateCreated': '4 months ago',
+    'likes': 2,
+    'comments': 123,
+    'isLiked': true,
+    'description':
+        'Years ago, I was employed at a Christian organization that had a large population of people who had a limited view of the gospel’s effects. They took umbrage with me because I believed one way the American church can usher in shalom is by casting Jesus’ life preservers out to our neighbors caught in the…',
+  },
+];
