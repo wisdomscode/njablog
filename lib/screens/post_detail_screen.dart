@@ -121,6 +121,41 @@ class PostDetailScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.black38, fontSize: 14),
                     textAlign: TextAlign.justify,
                   ),
+                  const SizedBox(height: 35),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(color: Colors.green.shade50, shape: BoxShape.rectangle, borderRadius: BorderRadius.circular(30)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.read_more,
+                              color: Colors.green.shade600,
+                            ),
+                            const SizedBox(width: 20),
+                            const Text('Read More'),
+                          ],
+                        ),
+                        const Spacer(),
+                        Row(
+                          children: [
+                            Text(
+                              'Get Premium',
+                              style: TextStyle(color: Colors.green.shade600, fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(width: 20),
+                            const Icon(
+                              Icons.close,
+                              color: Colors.black26,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 50),
                 ],
               ),
             ),
