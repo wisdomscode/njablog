@@ -1,7 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:njablog2/models/dommy_post.dart';
+import 'package:njablog2/screens/post_detail_screen.dart';
 import 'package:njablog2/widgets/blog_card_widget.dart';
 import 'package:njablog2/widgets/text_widget.dart';
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -39,10 +43,42 @@ class _HomeScreenState extends State<HomeScreen> {
 
   late String selectedCategory;
 
+  Future<List> fetchBlogPost() async {
+    List allBlogPosts = [];
+
+    // var url = "http://localhost:8000/blogposts/";
+    var url = "https://jsonplaceholder.typicode.com/posts";
+    var response = await http.get(
+      Uri.parse(url),
+      // headers: {
+      //   "Access-Control-Allow-Origin": "*",
+      //   'Content-Type': 'application/json',
+      //   'Accept': '*/*',
+      // },
+    );
+
+    if (response.statusCode == 200) {
+      var resBody = jsonDecode(response.body);
+      // print(resBody);
+
+      setState(() {
+        allBlogPosts = resBody;
+      });
+    } else {
+      throw Exception('Failed to load posts');
+    }
+    print('############### 200 #################');
+
+    print(allBlogPosts);
+    return allBlogPosts;
+  }
+
   @override
   void initState() {
     super.initState();
     selectedCategory = categories[0];
+
+    fetchBlogPost();
   }
 
   @override
@@ -204,11 +240,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
                     return GestureDetector(
                       onTap: () {
-                        // Navigator.of(context).push(
-                        //   MaterialPageRoute(
-                        //     builder: (context) => PostDetailPage(post: post),
-                        //   ),
-                        // );
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => PostDetailScreen(postData: post),
+                          ),
+                        );
                       },
                       child: BlogCardWidget(
                         author: post['author'],
@@ -223,7 +259,47 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   },
                 ),
-              )
+              ),
+
+              // FutureBuilder(
+              //   future: fetchBlogPost(),
+              //   builder: (context, snapshot) {
+              //     if (snapshot.connectionState == ConnectionState.waiting) {
+              //       return const CircularProgressIndicator();
+              //     } else if (snapshot.hasData) {
+              //       return Expanded(
+              //         child: ListView.builder(
+              //           itemCount: snapshot.data!.length,
+              //           itemBuilder: (context, index) {
+              //             final post = snapshot.data![index];
+
+              //             return GestureDetector(
+              //               onTap: () {
+              //                 // Navigator.of(context).push(
+              //                 //   MaterialPageRoute(
+              //                 //     builder: (context) => PostDetailPage(post: post),
+              //                 //   ),
+              //                 // );
+              //               },
+              //               child: BlogCardWidget(
+              //                 author: "post['author']",
+              //                 image: "post['image']",
+              //                 title: post['title'],
+              //                 dateCreated: "post['dateCreated']",
+              //                 likes: 2,
+              //                 comments: 3,
+              //                 category: "Sports",
+              //                 color: Colors.green.shade600,
+              //               ),
+              //             );
+              //           },
+              //         ),
+              //       );
+              //     } else {
+              //       return const Text("No data available");
+              //     }
+              //   },
+              // ),
             ],
           ),
         ),
