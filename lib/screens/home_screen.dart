@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ]),
         drawer: Drawer(
           backgroundColor: Colors.green.shade50,
-          child: Column(
+          child: const Column(
             children: [
               SizedBox(
                 height: 30,
@@ -168,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -197,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               // categories
               SizedBox(
                 height: 50,

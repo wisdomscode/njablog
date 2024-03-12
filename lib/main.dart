@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:njablog2/bottom_navigation_bar.dart';
 import 'package:njablog2/screens/home_screen.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const BottomNavigationBarPage(),
     );
   }
 }
